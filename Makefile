@@ -1,4 +1,4 @@
-.PYONY: build run test lin clean
+.PHONY: build run test lint clean
 
 build:
 	go build -o bin/api ./cmd/api
