@@ -1,0 +1,52 @@
+# --- Binários e Arquivos Gerados (Go Specific) ---
+# Compilados e executáveis (evita artefatos de build no Git)
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+bin/
+dist/
+
+# --- Dependências (Vendor) ---
+# Em Go, geralmente não commitamos o /vendor, a menos que a política da
+# empresa exija builds 100% offline (comum em infraestruturas críticas).
+# vendor/
+
+# --- Go Tooling ---
+# Arquivos de cobertura de testes e profiling
+*.out
+*.prof
+*.test
+
+# --- IDE: GoLand (JetBrains) ---
+# Exclui a pasta de configuração, mas mantém a estrutura básica se necessário
+.idea/
+*.iml
+*.iws
+
+# --- IDE: VS Code ---
+# Configurações locais de workspace e debug
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+*.code-workspace
+
+# --- Sistemas Operacionais (Outros) ---
+# Lixo gerado pelo macOS e Windows
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# --- Gerenciamento de Segredos (Critical) ---
+# Nunca commite arquivos de ambiente com credenciais
+.env
+.env.local
+.env.*.local
+*.pem
